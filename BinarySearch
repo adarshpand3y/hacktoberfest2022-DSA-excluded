@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+struct BSTnode
+{
+ int data;
+ struct BSTnode* left;
+ struct BSTnode* right;
+};
+
+struct BSTnode* newnode(int data)
+{
+   struct BSTnode *t = (struct BSTnode *)malloc(sizeof(struct BSTnode));
+   t->data = data;
+   t->left = t->right = NULL;
+   return t;
+}
+
+struct BSTnode* create (struct BSTnode* head, int data)
+{
+    if (head==NULL)
+    {
+        head = newnode(data);
+        return head;
+    }
+    else if(data<=head->data)
+        head->left=create(head->left,data);
+    else
+        head->right=create(head->right,data);
+    return head;
+
+}
+
+void inorder(struct BSTnode* head)
+{
+    if(head!=NULL)
+    {
+        inorder(head->left);
+        printf("%d\n",head->data);
+        inorder(head->right);
+    }
+}
+
+int main()
+{
+    struct BSTnode *head=NULL;
+    head=create(head,45);
+    head=create(head,15);
+    head=create(head,79);
+
+    inorder(head);
+    return 0;
+}
