@@ -10,7 +10,9 @@ int search(int arr[], int N, int x) {
 
 int main(void) {
     int arr[] = { 2, 3, 4, 10, 40 };
-    int x = 10;
+    int x;
+    printf("Enter element to be Searched:\n");
+    scanf("%d",&x);
     int N = sizeof(arr) / sizeof(arr[0]);
     int result = search(arr, N, x);
     if(result == -1)
