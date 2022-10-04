@@ -1,11 +1,9 @@
-package arrays;
-
 import java.util.Scanner;
 
 public class TrappingRainWater {
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Enter the size of array");
@@ -16,50 +14,29 @@ public class TrappingRainWater {
 
 		for (int i = 0; i < a; i++) {
 			arr[i] = sc.nextInt();
-		} 
-		
-//		 int n = arr.length;
-//	        int prefix[] = new int[n];
-//	        int suffix[] = new int[n];
-//	        prefix[0] = arr[0];
-//	        for (int i = 1; i < n; i++) {
-//	            prefix[i] = Math.max(prefix[i - 1], arr[i]);
-//	        }
-//	        suffix[n - 1] = arr[n - 1];
-//	        for (int i = n - 2; i >= 0; i--) {
-//	            suffix[i] = Math.max(suffix[i + 1], arr[i]);
-//	        }
-//	        int waterTrapped = 0;
-//	        for (int i = 0; i < n; i++) {
-//	            waterTrapped += Math.min(prefix[i], suffix[i]) - arr[i];
-//	        }
-//
-//		System.out.println("pani kitta = "+ waterTrapped);
-		
-		//two pointer approach
-		
-		 int n = arr.length;
-	        int left = 0, right = n - 1;
-	        int res = 0;
-	        int maxLeft = 0, maxRight = 0;
-	        while (left <= right) {
-	            if (arr[left] <= arr[right]) {
-	                if (arr[left] >= maxLeft) {
-	                    maxLeft = arr[left];
-	                } else {
-	                    res += maxLeft - arr[left];
-	                }
-	                left++;
-	            } else {
-	                if (arr[right] >= maxRight) {
-	                    maxRight = arr[right];
-	                } else {
-	                    res += maxRight - arr[right];
-	                }
-	                right--;
-	            }
-	        }
-		
+		}
+		int n = arr.length;
+		int left = 0, right = n - 1;
+		int res = 0;
+		int maxLeft = 0, maxRight = 0;
+		while (left <= right) {
+			if (arr[left] <= arr[right]) {
+				if (arr[left] >= maxLeft) {
+					maxLeft = arr[left];
+				} else {
+					res += maxLeft - arr[left];
+				}
+				left++;
+			} else {
+				if (arr[right] >= maxRight) {
+					maxRight = arr[right];
+				} else {
+					res += maxRight - arr[right];
+				}
+				right--;
+			}
+		}
+
 	}
 
 }

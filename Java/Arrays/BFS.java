@@ -1,5 +1,5 @@
 import java.util.*;
-public class Graph {
+class Graph {
   
   private int V;
   private LinkedList<Integer> adj[];

@@ -25,4 +25,3 @@ class BinarySearch {
         binarySearch(arr, 0, last, key);
     }
 }
-Footer
