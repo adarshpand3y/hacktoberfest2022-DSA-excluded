@@ -6,6 +6,14 @@ We aim to help you get started in Open Source contribution by accepting your pul
 requests for programs containing code for any
 **Data Structures and Algorithms problem only**.
 
+## Table of content :
+1. About Hacktober fest 2022
+2. Contributing & Guidelines
+3. How to contribute 
+4. Tech stack
+5. Authors
+6. End notes
+
 ## About Hacktoberfest 🤖
 
 Below is a video explaining what Hacktoberfest is. Watch it and register in hacktoberfest 2022.
