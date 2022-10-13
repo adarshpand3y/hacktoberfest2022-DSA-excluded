@@ -1,4 +1,6 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
+
  // This program is made by GodDrago
 void swap(int* xp, int* yp)
 {
@@ -18,20 +20,28 @@ void bubbleSort(int arr[], int n)
 }
  
 
-void printArray(int arr[], int size)
+void printArray(int arr[], int n)
 {
     int i;
-    for (i = 0; i < size; i++)
+    for (i = 0; i < n; i++)
         printf("%d ", arr[i]);
     printf("\n");
 }
  
 int main()
 {
-    int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n,arr[50];
+    cout << "Enter the value of n:";
+    cin >> n;
+    //int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
+    cout << "Enter the list of numbers:";
+    for(int i=0;i<n;i++)
+    {
+        cin >> arr[i];
+    }
+    //int n = sizeof(arr) / sizeof(arr[0]);
     bubbleSort(arr, n);
-    printf("Sorted array: \n");
+    cout << "Sorted array: \n";
     printArray(arr, n);
     return 0;
 }
