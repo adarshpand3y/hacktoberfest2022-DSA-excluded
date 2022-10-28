@@ -1,41 +1,25 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-int BinarySearch(int n, int search, int arr[])
+int binarySearch(int arr[], int l, int r, int x)
 {
-    int s = 0;
-    int e = n;
-    int mid = (s + e) / 2;
-    while (s <= e)
-    {
-        if (arr[mid] == search)
-        {
+    if (r >= l) {
+        int mid = l + (r - l) / 2;
+        if (arr[mid] == x)
             return mid;
-        }
-        else if (arr[mid] < search)
-        {
-            s = mid + 1;
-        }
-        else{
-            e=mid-1;
-        }
+        if (arr[mid] > x)
+            return binarySearch(arr, l, mid - 1, x);
+        return binarySearch(arr, mid + 1, r, x);
     }
     return -1;
 }
-
-int main()
+int main(void)
 {
-    int n;
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
-
-    int number;
-    cin >> number;
-    cout << BinarySearch(n, number, arr);
-
+    int arr[] = { 2, 3, 4, 10, 40 };
+    int x = 10;
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int result = binarySearch(arr, 0, n - 1, x);
+    (result == -1)
+        ? cout << "Element is not present in array"
+        : cout << "Element is present at index " << result;
     return 0;
 }
